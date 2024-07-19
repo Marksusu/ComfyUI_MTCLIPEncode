@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_mtencode"
+description = "Nodes:MTCLIPEncode"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["transformers"]
+
+[project.urls]
+Repository = "https://github.com/Marksusu/ComfyUI_MTEncode"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_MTEncode"
+Icon = ""
