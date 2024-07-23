@@ -45,7 +45,7 @@ ComfyUI 中，正向提示词示例
 在 Krita 设置中的默认风格提示词，插件设置选项 “Styles” 页面下 “Style Prompt” 和 “Negative Prompt” 所包含的内容。
 对比终端返回的情况，我们能看到，插件默认的风格提示词，与我写的提示词合并后，被拆分、翻译、组合、编码的大概过程。
 
-在 `nodes.py` 文件中添加更多语种列表：
+## 在 `nodes.py` 文件中添加更多语种列表：
 
 ```
 marian_list = [
@@ -53,8 +53,25 @@ marian_list = [
     "opus-mt-ru-en",
     "opus-mt-th-en",
 ]
-# https://huggingface.co/Helsinki-NLP 在这个地址里可以找到更多语种的模型，把状如 "opus-mt-th-en" 的模型名字添加到如上列表后，下次使用时会自动下载模型，下载到哪里我也不知道，实在想知道就去问 ChatGPT，代码几乎都是它写的。
+# https://huggingface.co/Helsinki-NLP
+# 在这个地址里可以找到更多语种的模型，
+# 把状如 "opus-mt-th-en" 的模型名字添加到如上列表后，
+# 下次使用时会自动下载模型，下载到哪里我也不知道，
+# 实在想知道就去问 ChatGPT，代码几乎都是它写的。
 ```
+## 若想在  `Krita AI Diffusion` 中使用本节点，就要修改 `pykrita/ai_diffusion` 目录下的 `comfy_workflow.py` 文件（安装本节点也是必须的，要不然呢……）：
+
+找到如下这行代码：
+
+`        return self.add("CLIPTextEncode", 1, clip=clip, text=text)`
+
+改为：
+
+```
+#        return self.add("CLIPTextEncode", 1, clip=clip, text=text)
+        return self.add("MTCLIPEncode", 1, clip=clip, text=text, checkpoint="opus-mt-zh-en")
+```
+### 详见这里： [Optimized the prompt word module of the plugin](https://github.com/Acly/krita-ai-diffusion/discussions/867) 
 
 ---
 
