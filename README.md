@@ -14,4 +14,4 @@
 
 
 
-![节点和输入文本的格式]([https://example.com/path/to/your/image.pn](https://github.com/Marksusu/ComfyUI_MTCLIPEncode/blob/main/2024-07-23%2015-21-25.png)
+![节点和输入文本的格式](https://github.com/Marksusu/ComfyUI_MTCLIPEncode/blob/main/2024-07-23%2015-21-25.png)
