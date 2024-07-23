@@ -59,9 +59,9 @@ marian_list = [
 # 下次使用时会自动下载模型，下载到哪里我也不知道，
 # 实在想知道就去问 ChatGPT，代码几乎都是它写的。
 ```
-## 若想在  `Krita AI Diffusion` 中使用本节点，就要修改 `pykrita/ai_diffusion` 目录下的 `comfy_workflow.py` 文件（安装本节点也是必须的，要不然呢……）：
+## 若想在  `Krita AI Diffusion` 中使用本节点，就要修改 `pykrita/ai_diffusion` 目录下的 `comfy_workflow.py` 文件（同时，安装本节点也是必须的，要不然呢……）：
 
-找到如下这行代码：
+在 `comfy_workflow.py` 文件里，找到如下这行代码：
 
 `        return self.add("CLIPTextEncode", 1, clip=clip, text=text)`
 
@@ -81,7 +81,7 @@ marian_list = [
 
 写该节点的过程是这样的：
 
-一、@Drakosha405 在 [Optimized the prompt word module of the plugin](https://github.com/Acly/krita-ai-diffusion/discussions/867) 中，提供了在 `Krita AI Diffusion` 插件里替换  `CLIP Text Encode` 节点的方法，以便在该插件中使用自己的母语（非英语）来书写提示词，这正是我想要的（谢谢你， @Drakosha405 ），但这似乎还不够。
+一、[@Drakosha405](https://github.com/Drakosha405) 在 [Optimized the prompt word module of the plugin](https://github.com/Acly/krita-ai-diffusion/discussions/867) 中，提供了在 `Krita AI Diffusion` 插件里替换  `CLIP Text Encode` 节点的方法，以便在该插件中使用自己的母语（非英语）来书写提示词，这正是我想要的（谢谢你， [@Drakosha405](https://github.com/Drakosha405) ），但这似乎还不够。
 
 二、学会这个方法后，我试用了几个能在 `ComfyUI Manager` 中搜到的 Encode 节点和翻译节点。
 
@@ -92,6 +92,8 @@ marian_list = [
 你让它翻译，它会用跟你相同的语言聊天，以此显得自己“很通用”。你让它处理反向提示词，它会说那些词汇太负面，它的道德和信仰让它“不能做那样的事”。
 
 希望大语言模型早日进化到能感觉到疼痛，好等哪天我学会写代码，一定会毫不犹豫为它写一行“不听话就抽嘴巴”的惩罚措施。
+
+![](https://github.com/Marksusu/ComfyUI_MTCLIPEncode/blob/main/ComfyUI_temp_thmdz_00057_.png)
 
 正是这股豪横气概，让我突然就看懂了“把 Ollama 返回的信息进行 Encode 处理”的那几行代码。
 
@@ -105,6 +107,8 @@ marian_list = [
 虽然在 ComfyUI 中测试效果良好，但在 Krita 中试用时还是遇到了一个新问题，于是就进入下面的“正则处理阶段”。
 
 四、在搜索与 Ollama 相关的节点时，理解了 [ComfyUi-Ollama-YN](https://github.com/wujm424606/ComfyUi-Ollama-YN) 用正则式处理文本的思路，正好解决下面 Krita 中遇到的问题。
+
+![](https://github.com/Marksusu/ComfyUI_MTCLIPEncode/blob/main/ComfyUI_temp_thmdz_00059_.png)
 
 毕竟，这个 `MTCLIPEncode` 节点就是为了在  `Krita AI Diffusion` 插件中使用而编写的。
 
@@ -125,6 +129,8 @@ marian_list = [
 简单解释为：
 
 `[不需翻译的前缀]|[需要翻译的提示词]|[不需要翻译的后缀]`
+
+![](https://github.com/Marksusu/ComfyUI_MTCLIPEncode/blob/main/ComfyUI_temp_thmdz_00064_.png)
 
 啰啰嗦嗦解释为：
 
