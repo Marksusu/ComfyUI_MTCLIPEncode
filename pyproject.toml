@@ -2,7 +2,7 @@
 name = "comfyui_mtclipencode"
 description = "MTCLIPEncode: An extension for ComfyUI's CLIPTextEncode node, offering multilingual translation (using MarianMT) and prompt enhancement (using Ollama). Seamlessly translate your native language prompts into English and further optimize them for generating your desired images with Stable Diffusion. Supports Krita AI Diffusion."  # 节点描述
 version = "0.2.0"
-license = {file = "LICENSE"}
+# license = {file = "LICENSE"}
 dependencies = ["transformers", "requests", "ollama"]
 
 [project.urls]
