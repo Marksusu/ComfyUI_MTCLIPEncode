@@ -8,9 +8,9 @@
 ```打油诗
 MTCLIPEncode
 　　　　　　　　〔mark〕
-Krita，Diffusion，               # -sion
-英文咒语最为准。                 # 准
-扩散增益 Ollama，              # -ma （变韵）
+Krita，Diffusion，        # -sion
+英文咒语最为准。            # 准
+扩散增益 Ollama，          # -ma （变韵）
 母语生图 convenient。      # -ient
 ```
 <img src="./images/MTCLIPEcode01.png" width="800">
