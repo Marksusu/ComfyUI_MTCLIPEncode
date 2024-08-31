@@ -367,5 +367,3 @@ Please convert the following user input text: {text}, into a detailed and vivid 
 英文提示词精准，Ollama优化深研
 母语输入多便捷，创作乐趣大无边
 ```
-
-> 真真是臭味相投啊！
