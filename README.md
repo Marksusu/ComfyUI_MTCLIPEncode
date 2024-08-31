@@ -139,6 +139,12 @@ Krita，Diffusion，               # -sion
 
 **▲ 用表格与实例，解释 `MarianMT` 翻译与 `Ollama` 优化的组合效果**
 
+---
+
+<img src="./images/table.png" width="800">
+
+**▲ 用表格与实例（图片格式），解释 `MarianMT` 翻译与 `Ollama` 优化的组合效果**
+
 <img src="./images/Kiki.png" width="700">
 
 **▲ krita-kiki 包含多种组合方式的简单工作流**
