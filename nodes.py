@@ -89,7 +89,7 @@ Please convert the following user input text: {text}, into a detailed and vivid 
         # 有`||`，说明有翻译请求，进行翻译处理
         if match:
             prefix, translate_part, suffix = [re.sub(r'^[\s|,]+|[\s|,]+$', '', part.strip()) for part in match.groups()]    # 被 `||` 双竖线分隔的三个部分
-            print(f"　　　　\033[94m{prefix}\033[0m, \033[92m{translate_part}\033[0m, \033[94m{suffix}\033[0m")    # 打印用户的原始输入，并用颜色区分三个部分
+            print(f"　　　　\033[94m{prefix}\033[0m, \033[0;1m|\033[0m \033[92m{translate_part}\033[0m, \033[0;1m|\033[0m \033[94m{suffix}\033[0m")    # 打印用户的原始输入（有`|`），并用颜色区分三个部分
 
             # ollama_in_translate_part 和 ollama_for_all_3_parts 的判断在解析出 prefix、translate_part 和 suffix 之后
             ollama_in_translate_part = '!' in translate_part  # 判断叹号是否在翻译部分
