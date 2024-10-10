@@ -1,3 +1,20 @@
+##快速入门（Quick Start）：
+
+MT_translate only:
+
+`prefix | translate_part | suffix`
+
+MT_translate + Ollama_process:
+
+`prefix |! translate_part | suffix`
+
+Ollama_process only:
+
+`prefix ! Ollama_process ! suffix`
+
+<img src="./images/thenode.png" width="600">
+
+---
 
 # MTCLIPEncode 节点功能描述
 
