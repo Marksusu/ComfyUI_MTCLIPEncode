@@ -1,4 +1,4 @@
-##快速入门（Quick Start）：
+## 快速入门（Quick Start）：
 
 MT_translate only:
 
